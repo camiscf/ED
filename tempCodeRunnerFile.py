@@ -1,0 +1,1 @@
+rint("O elemento {} não é presente".format(elemento))
