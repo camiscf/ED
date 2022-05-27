@@ -20,18 +20,29 @@ class Stack:
         node = Node(elem)
         node.next = self.top
         self.top = node
+        self._size +=1
+
 
     def pop(self):
         #remove o elemento da pilha
-        if 
+
+        if self._size > 0:
             node = self.top
             #move o topo uma posição abaixo
             self.top = self.top.next
-            return node
+            self._size -=1
+            return node.data
+        else:
+            raise IndexError("the stack is empty")
 
 
     def peek(self):
         #remove o topo da pilha sem remover
+        if self._size > 0:
+            return self.top.data
+        else:
+            raise IndexError("the stack is empty")
+
 
     def __len__(self):
         return self._size
@@ -40,9 +51,9 @@ class Stack:
 
     def __repr__(self):
         r = ""
-        pointer = self.head
+        pointer = self.top
         while(pointer):
-            r = r + str(pointer.data) + "->"
+            r = r + str(pointer.data) + "\n"
             pointer = pointer.next
         return r
 
