@@ -9,7 +9,7 @@
  * 
  * INSTRUÇÕES: ./lista01 ordena -n [tamanho] -m [modo]
  * 
- *      modo:     m MERGE Sort
+ *      modo:       MERGE Sort
  *                b BUBBLE Sort
  *                q QUICK Sort
  * 
