@@ -7,13 +7,13 @@
  * @copyright Copyright (c) 2022
  * 
  * 
- * INSTRUÇÕES: ./lista01 ordena -n [tamanho] -m [modo]
+ * INSTRUÇÕES: ./lista01 ordena -n [tamanho] -m
  * 
- *      modo:       MERGE Sort
- *                b BUBBLE Sort
- *                q QUICK Sort
+ *      modo:     -m MERGE Sort
+ *                   BUBBLE Sort
+ *                -q QUICK Sort
  * 
- *      e.g. ./lista01 -n 10 -m q
+ *      e.g. ./lista01 ordena -n 10 -m
  */
 
 
