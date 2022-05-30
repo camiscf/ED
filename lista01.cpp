@@ -1,7 +1,6 @@
 /*
  * @file lista01.cpp
  * @author Camila Caleones de Figueiredo
- * @dre 121080642 
  * @version 0.1
  * @date 2022-04-22
  * 
