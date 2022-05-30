@@ -1,0 +1,13 @@
+recebe a expressao
+divide em duas pilhas, a de operadores e a de numeros
+varre do começo pro fim
+
+1 + (3*(4-5)-8*(12-9))
+
+stack 1: 1 3 4 5 8 12 9
+stack 2: + ( * ( -) - * (-))
+
+1°) ler quantos caracteres tem
+2°) dividir operador e numero em pilhas diferentes
+3°) analisa a precendencia antes de push o proximo 
+4°) push result e analisa o proximo
