@@ -146,11 +146,12 @@ void printarray(int *v, int n)
 
 int main(int argc, char** argv){
 
-    if (argv[4] == string("m")){
+    if(argc > 4){
+        if (argv[4] == string("-m")){
         
         cout << "****** MERGE SORT ******" <<"\n";
 
-        int n = atoi((argv[2]));
+        int n = atoi((argv[3]));
         int v[n];
         
         for(int i=0;i<n;i++){
@@ -159,28 +160,30 @@ int main(int argc, char** argv){
         mergeSort(v,0,n);
         printarray(v,n);
 
-	}
+	    }
     
-	else if (argv[4] == string("q")){
-        
-        cout << "****** QUICK SORT ******" <<"\n";
-        
-        int n = atoi((argv[2]));
-        int v[n];
-        
-        for(int i=0;i<n;i++){
-            v[i]=rand();
+        else if (argv[4] == string("-q")){
+            
+            cout << "****** QUICK SORT ******" <<"\n";
+            
+            int n = atoi((argv[3]));
+            int v[n];
+            
+            for(int i=0;i<n;i++){
+                v[i]=rand();
+            }
+
+            quicksort(v, 0, n-1);
+            printarray(v,n);
         }
-
-        quicksort(v, 0, n-1);
-        printarray(v,n);
-	}
-
-	else if (argv[4] == string("b")){
-        
+        else{
+            cout << "função inexistente no programa" << "\n";
+        }
+    }
+    else if(argc == 4){
         cout << "****** BUBBLE SORT ******" <<"\n";
         
-        int n = atoi((argv[2]));
+        int n = atoi((argv[3]));
         int v[n];
         
         for(int i=0;i<n;i++){
@@ -189,12 +192,9 @@ int main(int argc, char** argv){
 
         bubbleSort(v,n);
         printarray(v,n);
-        }
-
-
+    }
 	else{
-		cout << "função inexistente" << "\n";
+		cout << "falta de argumentos" << "\n";
 	}
-
 
 }
