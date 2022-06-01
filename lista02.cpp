@@ -115,12 +115,14 @@ int doingEquation(string equation){
                 pilha_operadores.push(equationPot);
                 value = 0;
             }
+            //não faz sentido
             else if (pilha_numeros.empty()){
                 pilha_numeros.push(value);
                 pilha_operadores.push(equationPot);
                 value = 0;
             }
             else if (equationPot == ')'){
+                //olhar
                 pilha_numeros.push(value);
 
                 while (pilha_operadores.check() != '(' )
@@ -131,6 +133,8 @@ int doingEquation(string equation){
                     value = operations(ant, value, equationPot);
                     pilha_numeros.push(value);
                 }
+                //??
+                
                 pilha_operadores.pop();
                 pilha_numeros.pop();
             }
