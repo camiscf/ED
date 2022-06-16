@@ -11,6 +11,33 @@ vector<int> ord;
 int numVer=0; 
 int numAres=0;
 
+void GetGraph(){
+    // Descarta a primeira linha
+    string lixo;
+    getline(cin, lixo);
+
+    for (int i=1;i<=numVer;i++){
+        string s;
+        getline(cin, s);
+
+        string tmp = "";
+        for (int j=0;j<s.size();j++){
+            if (s[j] == ' '){
+                int x = stoi(tmp);
+                tmp = "";
+                adj[i].push_back(x);
+                continue;
+            }
+            tmp += s[j];
+        }
+
+        if (tmp != ""){
+            int x = stoi(tmp);
+            adj[i].push_back(x);
+        }
+    }
+}
+
 void printAdj(){
     for(int i = 1; i <= adj.size(); i++){
         for(int j  = 0; j < adj[i].size(); j++){
@@ -51,30 +78,7 @@ int main(void){
     gent.resize(numVer+1);
     visited.resize(numVer+1);
 
-    // Descarta a primeira linha
-    string lixo;
-    getline(cin, lixo);
-
-    for (int i=1;i<=numVer;i++){
-        string s;
-        getline(cin, s);
-
-        string tmp = "";
-        for (int j=0;j<s.size();j++){
-            if (s[j] == ' '){
-                int x = stoi(tmp);
-                tmp = "";
-                adj[i].push_back(x);
-                continue;
-            }
-            tmp += s[j];
-        }
-
-        if (tmp != ""){
-            int x = stoi(tmp);
-            adj[i].push_back(x);
-        }
-    }
+    GetGraph();
 
     CalGent();
 
@@ -94,37 +98,3 @@ int main(void){
     printOrd();
 
 }
-
-/* 
-1->2    
-2->3
-2->4
-3->4
-
-adj = [[2], [3, 4], [4], []]
-gent = [0,0,1,2]
-
-nós arestas
-...
-
-4 4
-2
-3 4
-4
-
-8 9
-2 4
-4
-5 7
-6
-7 8
-8
-
-6 7
-2
-3
-6
-1 5
-2 3
-
-*/
