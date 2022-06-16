@@ -5,7 +5,7 @@ using namespace std;
 
 vector<vector<int>> adj;
 vector<int> gent;
-vector<bool> vis;
+vector<bool> visited;
 vector<int> ord;
 
 int numVer=0; 
@@ -49,7 +49,7 @@ int main(void){
     cin >> numVer >> numAres;
     adj.resize(numVer+1);
     gent.resize(numVer+1);
-    vis.resize(numVer+1);
+    visited.resize(numVer+1);
 
     // Descarta a primeira linha
     string lixo;
@@ -80,9 +80,9 @@ int main(void){
 
     while (ord.size() != numVer){
         for (int i=1;i<=numVer;i++){
-            if (gent[i] == 0 && vis[i] == false){
+            if (gent[i] == 0 && visited[i] == false){
                 ord.push_back(i);
-                vis[i] = true;
+                visited[i] = true;
                 for (int j=0;j<adj[i].size();j++){
                     gent[adj[i][j]]--;
                 }
@@ -92,31 +92,8 @@ int main(void){
     }
 
     printOrd();
-    // for(int i = 0; i < numVer; i++){
-    //     cin >> adj[i];
-    // }
 
-
-    // if(adj.empty()){
-    //     cout >> "Lista vazia";
-    // }
-    // else{
-
-    // }
 }
-
-// Oi amor!
-// oI AMOR!
-
-/* O que a gente precisa fazer:
-
-1. Ler a entrada, e guardar na estrutura de dados adequada (qual é a estrutura adequada? -> armazena na lista de adjacências)
-cls   3.2. Eliminar a fonte (e todas as arestas que saem dela)
-    3.3. Adicionar a fonte em uma lista
-    3.4. Repetir até acabar
-*/
-
-// Tô só esperando ele acabar a história pra gente poder falar sobre o algortimo :) HDUASHUAHDA okay
 
 /* 
 1->2    
@@ -149,6 +126,5 @@ nós arestas
 6
 1 5
 2 3
-
 
 */
